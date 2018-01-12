@@ -19,6 +19,10 @@ class Gateway extends WC_Payment_Gateway {
 
 		add_action( 'woocommerce_update_options_payment_gateways_' . $this->id, array( $this, 'process_admin_options' ) );
 
+		if ( ! raipay_woocommerce()->is_valid_for_use() ) {
+			$this->enabled = 'no';
+		}
+
 		$this->init_form_fields();
 		$this->init_settings();
 	}
@@ -56,6 +60,16 @@ class Gateway extends WC_Payment_Gateway {
 		);
 	}
 
+	public function admin_options() {
+		if ( raipay_woocommerce()->is_valid_for_use() ) {
+			parent::admin_options();
+		} else {
+			?>
+			<div class="inline error"><p><strong><?php _e( 'Gateway disabled', 'raipay-woocommerce' ); ?></strong>: <?php _e( 'RaiPay does not support your store currency.', 'raipay-woocommerce' ); ?></p></div>
+			<?php
+		}
+	}
+
 	public function init_settings() {
 		parent::init_settings();
 		$this->enabled  = ! empty( $this->settings['enabled'] ) && 'yes' === $this->settings['enabled'] ? 'yes' : 'no';
@@ -80,6 +94,10 @@ class Gateway extends WC_Payment_Gateway {
 	}
 
 	public function process_payment( $order_id ) {
+		if ( ! raipay_woocommerce()->is_valid_for_use() ) {
+			return [ 'result' => 'failure' ];
+		}
+
 		/** @var \WC_Order $order */
 		$order = wc_get_order( $order_id );
 		$total = $order->get_total();
