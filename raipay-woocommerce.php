@@ -2,7 +2,10 @@
 
 /**
  * Plugin Name: RaiPay for WooCommerce
- * Description: RaiPay payment gateway for WooCommerce.
+ * Description: RaiPay payment gateway for WooCommerce to allow payments in RaiBlocks (XRB).
+ * Author: Coen Jacobs
+ * Author URI: https://coenjacobs.me
+ * Version: 0.1.1
  */
 
 require('vendor/autoload.php');
