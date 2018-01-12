@@ -21,5 +21,8 @@ You can select RaiBlocks (XRB) as the currency of your store after activating th
 
 Alternatively, RaiPay can dynamically convert USD prices into XRB prices. You can leave your prices in USD and RaiPay will do the converting for you. RaiPay currently does not support any other currencies than XRB and USD.
 
+## Donate
+This plugin is completely free to use. Feel free to donate me some XRB if you enjoy the plugin and want to thank me for building it: `xrb_3isszzzi45guyqsr4rmqm1yjqm5fin913kmwqyqfzwkroyodux1nuxqpinb3`
+
 ## License
 GPLv2 or later
