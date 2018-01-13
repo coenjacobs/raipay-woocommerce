@@ -105,7 +105,7 @@ class Gateway extends WC_Payment_Gateway {
 		$response = wp_remote_post('https://api.raipay.io/payments/' . $this->get_option('vendor_id'), [
 			'body' => [
 				'amount'       => $total,
-				'currency'     => 'xrb',
+				'currency'     => strtolower(get_woocommerce_currency()),
 				'tag'          => 'order-'. $order_id,
 				'redirect_url' => $this->get_return_url($order),
 				'webhook'      => add_query_arg('raipayListener', 'raipayWebhook', get_home_url()),
