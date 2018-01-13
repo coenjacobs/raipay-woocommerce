@@ -5,7 +5,7 @@
  * Description: RaiPay payment gateway for WooCommerce to allow payments in RaiBlocks (XRB).
  * Author: Coen Jacobs
  * Author URI: https://coenjacobs.me
- * Version: 0.1.1
+ * Version: 0.1.2
  */
 
 require('vendor/autoload.php');
