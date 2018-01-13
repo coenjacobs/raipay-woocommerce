@@ -18,9 +18,10 @@ class Listener
 	}
 
 	public function handle_webhook() {
-		$data = json_decode($_POST);
+		$input = @file_get_contents("php://input");
+		$data = json_decode($input);
 
-		if  ( $data->paid_at == null ) {
+		if ( $data->paid_at == null ) {
 			$output = [
 				'message' => 'Thanks for calling',
 				'paid_at' => null,
