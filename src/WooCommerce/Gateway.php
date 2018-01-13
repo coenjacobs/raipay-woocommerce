@@ -122,7 +122,6 @@ class Gateway extends WC_Payment_Gateway {
 
 		$body = json_decode($response['body']);
 
-		$order->add_order_note('RaiPay payment token: ' . $body->token);
 		update_post_meta($order_id, 'raipay_woocommerce_payment_token', $body->token);
 
 		return [
