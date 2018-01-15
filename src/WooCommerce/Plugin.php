@@ -37,6 +37,6 @@ class Plugin
 	}
 
 	public function is_valid_for_use() {
-		return in_array( get_woocommerce_currency(), apply_filters( 'raipay_woocommerce_supported_currencies', array( 'USD', 'XRB' ) ) );
+		return in_array( get_woocommerce_currency(), apply_filters( 'raipay_woocommerce_supported_currencies', array( 'XRB', 'AUD', 'BGN', 'BRL', 'CAD', 'CHF', 'CNY', 'CZK', 'DKK', 'GBP', 'HKD', 'HRK', 'HUF', 'IDR', 'ILS', 'INR', 'JPY', 'KRW', 'MXN', 'MYR', 'NOK', 'NZD', 'PHP', 'PLN', 'RON', 'RUB', 'SEK', 'SGD', 'THB', 'TRY', 'USD', 'ZAR' ) ) );
 	}
 }
