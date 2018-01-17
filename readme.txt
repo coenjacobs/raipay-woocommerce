@@ -3,7 +3,7 @@ Contributors: CoenJacobs
 Tags: woocommerce, payment, raiblocks, xrb, cryptocurrency
 Requires at least: 4.4.0
 Tested up to: 4.9.1
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,9 @@ RaiPay payment gateway for WooCommerce to allow payments in RaiBlocks (XRB).
 * WordPress 4.4+
 
 == Changelog ==
+
+= 0.1.3 =
+* Added new (many!) currencies implemented by RaiPay
 
 = 0.1.2 =
 * Fixed passing correct currency to payment request
