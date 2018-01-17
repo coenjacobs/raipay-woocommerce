@@ -2,42 +2,6 @@
 
 namespace CoenJacobs\RaiPay\WooCommerce;
 
-$supported_currencies = array(
-	'XRB',
-	'AUD',
-	'BGN',
-	'BRL',
-	'CAD',
-	'CHF',
-	'CNY',
-	'CZK',
-	'DKK',
-	'EUR',
-	'GBP',
-	'HKD',
-	'HRK',
-	'HUF',
-	'IDR',
-	'ILS',
-	'INR',
-	'JPY',
-	'KRW',
-	'MXN',
-	'MYR',
-	'NOK',
-	'NZD',
-	'PHP',
-	'PLN',
-	'RON',
-	'RUB',
-	'SEK',
-	'SGD',
-	'THB',
-	'TRY',
-	'USD',
-	'ZAR',
-);
-
 class Plugin
 {
 	/** @var Currency */
@@ -73,6 +37,42 @@ class Plugin
 	}
 
 	public function is_valid_for_use() {
+		$supported_currencies = array(
+			'XRB',
+			'AUD',
+			'BGN',
+			'BRL',
+			'CAD',
+			'CHF',
+			'CNY',
+			'CZK',
+			'DKK',
+			'EUR',
+			'GBP',
+			'HKD',
+			'HRK',
+			'HUF',
+			'IDR',
+			'ILS',
+			'INR',
+			'JPY',
+			'KRW',
+			'MXN',
+			'MYR',
+			'NOK',
+			'NZD',
+			'PHP',
+			'PLN',
+			'RON',
+			'RUB',
+			'SEK',
+			'SGD',
+			'THB',
+			'TRY',
+			'USD',
+			'ZAR',
+		);
+
 		return in_array( get_woocommerce_currency(), apply_filters( 'raipay_woocommerce_supported_currencies', $supported_currencies ) );
 	}
 }
